@@ -347,8 +347,8 @@ mod tests {
     #[test]
     fn test_diffusion_converges() {
         let mut g = CellGraph::new(120.0);
-        let _r0 = g.add_room(0.0, 5);
-        let _r1 = g.add_room(10.0, 5);
+        let r0 = g.add_room(0.0, 5);
+        let r1 = g.add_room(10.0, 5);
         g.add_edge(r0, r1, 1.0);
         g.add_edge(r1, r0, 1.0);
         for _ in 0..200 {
@@ -361,8 +361,8 @@ mod tests {
     #[test]
     fn test_conservation() {
         let mut g = CellGraph::new(120.0);
-        let _r0 = g.add_room(3.0, 5);
-        let _r1 = g.add_room(7.0, 5);
+        let r0 = g.add_room(3.0, 5);
+        let r1 = g.add_room(7.0, 5);
         g.add_edge(r0, r1, 0.5);
         g.add_edge(r1, r0, 0.5);
         let before = g.total_vibe();
@@ -449,7 +449,7 @@ mod tests {
     fn test_remove_preserves_conservation() {
         let mut g = CellGraph::new(120.0);
         let _r0 = g.add_room(3.0, 5);
-        let _r1 = g.add_room(7.0, 5);
+        let r1 = g.add_room(7.0, 5);
         let _r2 = g.add_room(10.0, 5);
         let before = g.total_vibe();
         g.remove_room(r1);
