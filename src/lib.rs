@@ -56,7 +56,6 @@ impl Jepa {
             return;
         }
         // Reinforce weights whose readings were close to actual
-        let total_weight: f64 = self.weights.iter().sum();
         for (i, (_, v)) in self.readings.iter().enumerate() {
             let error = (v - actual).abs();
             // Inverse error: closer readings get higher weight
@@ -114,7 +113,7 @@ impl Room {
         }
     }
 
-    pub fn tick(&mut self, timestamp: f64, tick: u64) -> f64 {
+    pub fn tick(&mut self, timestamp: f64, _tick: u64) -> f64 {
         let surprise = self.jepa.surprise(self.vibe);
         self.jepa.read(timestamp, self.vibe);
         self.last_surprise = surprise;
