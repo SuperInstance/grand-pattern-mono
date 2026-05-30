@@ -2,6 +2,4 @@
 name = "grand-pattern-mono"
 version = "0.1.0"
 edition = "2021"
-description = "The corrected Grand Pattern — vibe is mono-dimensional, JEPA is a weighted reading."
-
-[dependencies]
+description = "The corrected Grand Pattern — vibe is mono-dimensional, JEPA is a weighted reading"
