@@ -347,8 +347,8 @@ mod tests {
     #[test]
     fn test_diffusion_converges() {
         let mut g = CellGraph::new(120.0);
-        let r0 = g.add_room(0.0, 5);
-        let r1 = g.add_room(10.0, 5);
+        let _r0 = g.add_room(0.0, 5);
+        let _r1 = g.add_room(10.0, 5);
         g.add_edge(r0, r1, 1.0);
         g.add_edge(r1, r0, 1.0);
         for _ in 0..200 {
@@ -361,8 +361,8 @@ mod tests {
     #[test]
     fn test_conservation() {
         let mut g = CellGraph::new(120.0);
-        let r0 = g.add_room(3.0, 5);
-        let r1 = g.add_room(7.0, 5);
+        let _r0 = g.add_room(3.0, 5);
+        let _r1 = g.add_room(7.0, 5);
         g.add_edge(r0, r1, 0.5);
         g.add_edge(r1, r0, 0.5);
         let before = g.total_vibe();
@@ -389,7 +389,7 @@ mod tests {
     #[test]
     fn test_surprise_cascade() {
         let mut g = CellGraph::new(120.0);
-        let r0 = g.add_room(5.0, 5);
+        let _r0 = g.add_room(5.0, 5);
         let _r1 = g.add_room(5.0, 5);
         // Let JEPA learn constant 5
         for _ in 0..5 {
@@ -405,8 +405,8 @@ mod tests {
     #[test]
     fn test_different_jepa_weights() {
         let mut g = CellGraph::new(120.0);
-        let r0 = g.add_room(1.0, 5);
-        let r1 = g.add_room(100.0, 5);
+        let _r0 = g.add_room(1.0, 5);
+        let _r1 = g.add_room(100.0, 5);
         for i in 0..10 {
             g.rooms[0].vibe = (i as f64).sin();
             g.rooms[1].vibe = (i as f64).cos() * 10.0;
@@ -448,9 +448,9 @@ mod tests {
     #[test]
     fn test_remove_preserves_conservation() {
         let mut g = CellGraph::new(120.0);
-        let r0 = g.add_room(3.0, 5);
-        let r1 = g.add_room(7.0, 5);
-        let r2 = g.add_room(10.0, 5);
+        let _r0 = g.add_room(3.0, 5);
+        let _r1 = g.add_room(7.0, 5);
+        let _r2 = g.add_room(10.0, 5);
         let before = g.total_vibe();
         g.remove_room(r1);
         // Total should be reduced by room 1's vibe
